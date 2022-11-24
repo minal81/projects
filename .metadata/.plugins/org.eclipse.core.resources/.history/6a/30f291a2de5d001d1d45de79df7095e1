@@ -1,0 +1,19 @@
+package com.Spring.Entity;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class SalaryLogicTest {
+
+	@Test
+	public void testGetSalUsingEmpId() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testViewAllSal() {
+		fail("Not yet implemented");
+	}
+
+}

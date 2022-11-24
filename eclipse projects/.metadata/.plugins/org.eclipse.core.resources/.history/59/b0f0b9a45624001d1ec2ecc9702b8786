@@ -1,0 +1,52 @@
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+public class MedicineDistributor {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter the Ditributor name");
+		String name=sc.next();
+		System.out.println("Enter the Licensenumber");
+		String L_number=sc.next();
+		System.out.println("Enter the order mode");
+		String order=sc.next();
+		System.out.println("Enter the Medical Id");
+		String M_Id=sc.next();
+		System.out.println("Enter the Medical name");
+		String M_name=sc.next();
+		System.out.println("Enter the payment mode");
+		String payment=sc.next();
+		System.out.println("Enter the company name");
+		String C_name=sc.next();
+		
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/minal", "root", "Minal@2000");
+			Statement s=con.createStatement();
+			
+			//s.execute("create table MedicineDistributor(DistributorId int auto_increment primary key,DistributorName varchar(20),LicenseNumber int ,orderMode varchar(20),MedicalId int,MedicalName varchar(20),PaymentMode varchar(20),CompanyName varchar(20));");
+			//System.out.println("table create....");
+			
+			
+			PreparedStatement ps=con.prepareStatement("insert into MedicineDistributor(DistributorName,LicenseNumber,orderMode,MedicalId,MedicalName,PaymentMode,CompanyName) values(?,?,?,?,?,?,?)");
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+
+	}
+
+}

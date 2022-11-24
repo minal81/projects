@@ -1,0 +1,45 @@
+import java.util.Arrays;
+
+public class PositiveNegetive {
+	
+	static void moveNegative(int[] arr)
+	{
+
+		
+		int NegetiveArr[] = new int[10];
+		int positiveArr[] = new int[10];
+		
+		
+
+		for (int i = 0; i < arr.length; i++)
+		{
+			if (arr[i] < 0) 
+			{
+				NegetiveArr[i]=arr[i];
+				
+			}
+			
+			
+			else
+			{
+				positiveArr[i]=arr[i];
+			}
+		}
+		
+        int length=10;
+        int result[]=new int[length];
+        System.arraycopy(positiveArr, 0, result, 0, 20);
+        System.arraycopy(NegetiveArr, 0, result, positiveArr.length, 20);
+        System.out.println(Arrays.toString(result));
+        
+		
+	}
+
+
+	public static void main(String[] args) {
+		int[] arr = {  5, -3, 4, -8,-7, 3, -9, -3, 9, -2 };
+	    moveNegative(arr);
+
+	}
+
+}

@@ -1,0 +1,19 @@
+package com.Spring.Entity;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class EmployeeLogicTest {
+
+	@Test
+	public void testViewEmployees() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testViewAll() {
+		fail("Not yet implemented");
+	}
+
+}

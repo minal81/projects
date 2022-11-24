@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form method="post">
+			<label>Name</label><input type="text" name="txtName" value=""><br><br>
+			<label>Password</label><input type="password" name="txtPWD" value=""><br><br>
+			<label>Programming Language</label><input type="radio" name="rdoLang" value="Java">Java<input type="radio" name="rdoLang" value="Dotnet">DOTNET<input type="radio" name="rdoLang" value="PHP">PHP<br><br>
+			<label>Anudip Location</label><input type="checkbox" name="chkLocation" value="MHVSI">VASI<input type="checkbox" name="chkLocation" value="MUMBAI">MUMBAI<input type="checkbox" name="chkLocation" value="Kolkota">Kolkota<br><br>
+			<label>Course</label>
+			<select>
+				<option value="Java">JAVA</option>
+				<option value="Dotnet">Dotnet</option>
+
+			</select>
+			<label>Course</label><input list="names">
+			<datalist id="names">
+				<option value="Java">JAVA</option>
+				<option value="Dotnet">Dotnet</option>
+			</datalist>
+			<meter min="1" max="7" value="6"></meter>
+			<progress min="1" max="7" value="6"></progress>
+			<input type="submit" value="Register">
+		</form>
+
+</body>
+</html>

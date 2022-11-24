@@ -1,0 +1,50 @@
+package com.Student;
+
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.EntityTransaction;
+import jakarta.persistence.Persistence;
+
+public class StudentLogic {
+	EntityManagerFactory emf = null;
+	EntityManager em = null;
+	EntityTransaction et = null;
+	{
+		emf = Persistence.createEntityManagerFactory("StudentPU");
+
+		 em = emf.createEntityManager();
+		 et = em.getTransaction();
+	}
+
+	public boolean AddData(String name, String Qulification) {
+		et.begin();
+		student s1 = new student();
+		s1.setName(name);
+		s1.setQulification(Qulification);
+		em.persist(s1);
+		et.commit();
+		return true;
+	}
+
+	public String ViewData() {
+		et.begin();
+		student s1 = em.find(student.class, 52);
+		String name = s1.getName();
+		et.commit();
+		return name;
+	}
+
+	public boolean DeleteData() {
+		et.begin();
+		student s1 = em.find(student.class, 152);
+		if (s1 == null) {
+			System.out.println("removed already");
+
+		} else {
+			em.remove(s1);
+		}
+		et.commit();
+		return true;
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.Banking.Bank.repository;
+
+public interface TransactionRepository {
+
+}

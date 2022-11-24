@@ -1,0 +1,33 @@
+
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class RegistrationS
+ */
+@WebServlet("/RegistrationS")
+public class RegistrationS extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html");
+		String name=request.getParameter("txtName");
+		String pwd=request.getParameter("txtPWD");
+		String email=request.getParameter("txtemail");
+		long phone=Long.parseLong(request.getParameter("txtphone"));
+		
+		PrintWriter pw=response.getWriter();
+		pw.print("name:"+name+"<br></br>"+"password:"+pwd+"<br></br>"+"email:"+email+"<br></br>"+"phone no:"+phone);
+	}
+
+}

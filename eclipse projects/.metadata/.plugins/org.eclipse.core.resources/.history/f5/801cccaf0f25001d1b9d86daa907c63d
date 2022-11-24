@@ -1,0 +1,16 @@
+package javaFeacture;
+
+interface arithmatic
+{
+	public int add(int a, int b);
+}
+public class LambdaEx {
+
+	public static void main(String[] args) {
+		arithmatic h=(a,b)->(a+b);
+		System.out.println(h.add(20,30));
+		
+
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.SpringBoot911.SpringBoot911.entity;
+
+public class Batch {
+
+}

@@ -1,0 +1,118 @@
+package com.Spring.Entity;
+
+import java.util.Scanner;
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.EntityTransaction;
+import jakarta.persistence.Persistence;
+
+public class EmployeeLogic {
+	Scanner sc = new Scanner(System.in);
+	EntityManagerFactory emf = null;
+	EntityManager em = null;
+	EntityTransaction et = null;
+	{
+		emf = Persistence.createEntityManagerFactory("ProjectUnit");
+
+		 em = emf.createEntityManager();
+		 et = em.getTransaction();
+	}
+	
+	public boolean addEmployee() {
+		et.begin();
+		JFrame jp = new JFrame();
+		Scanner sc = new Scanner(System.in);
+		Employee1 e1 = new Employee1();
+		System.out.println("Enter Employee First name");
+		String f_name=sc.next();
+		e1.setE_F_name(f_name);
+		System.out.println("Enter Employee Last name");
+		String L_name=sc.next();
+		e1.setE_L_name(L_name);
+
+		System.out.println("Enter Employee Date of birth(dd/mm/yyyy)");
+		String DOB=sc.next();
+		e1.setE_DOB(DOB);
+
+		System.out.println("Enter Employee Gender(M/F)");
+		char Gender=sc.next().charAt(0);
+		e1.setE_Gender(Gender);
+		   
+	    System.out.println("Enter Employee City");
+	    String City=sc.next();
+	    e1.setE_City(City);
+	    
+	    System.out.println("Enter Employee Phone");
+	    long phone=sc.nextLong();
+	    e1.setE_Phone(phone);
+	    
+	    System.out.println("Enter Employee Designation");
+	    String Designation=sc.next();
+	    e1.setE_Designation(Designation);
+	   
+	    System.out.println("Enter Employee Department");
+	    String Department=sc.next();
+	    e1.setE_Department(Department);
+	    
+	    System.out.println("Enter Employee date of joining(dd/mm/yyyy");
+	    String DOJ=sc.next();
+	    e1.setE_DOJ(DOJ);
+	    
+	    System.out.println("Enter Employee Grade");
+	    char Grade=sc.next().charAt(0);
+	    e1.setE_Grade(Grade);
+	   
+	    em.persist(e1);
+	    et.commit();
+	    JOptionPane.showMessageDialog(jp, "Succeussfully Inserted..", "Alert",JOptionPane.INFORMATION_MESSAGE);
+	    sc.close();
+	    
+	    return true;
+	}
+	    
+	    public void viewEmployees() {
+	    	et.begin();
+	    	System.out.println("Employee Id");
+	    	int id=sc.nextInt();
+	    	Employee1 f1 = em.find(Employee1.class,id);
+			System.out.println("Employee f_name:"+f1.getE_F_name());
+			System.out.println("Employee L_name:"+f1.getE_L_name());
+			System.out.println("Employee City:"+f1.getE_City());
+			System.out.println("Employee Department:"+f1.getE_Department());
+			System.out.println("Employee DEsignation:"+f1.getE_Designation());
+			sc.close();
+			et.commit();
+	    }
+	    
+	    public boolean updateEmployeesName() {
+	    	et.begin();
+	    	Employee1 e1 = new Employee1();
+	    	System.out.println("Enter employee first name to change :- ");
+	    	String changeFName = sc.next();
+	    	e1.setE_F_name(changeFName);
+
+	    	System.out.println("Enter employee last name to change :- ");
+	    	String changeLName = sc.next();
+	    	e1.setE_F_name(changeLName);
+	    	sc.close();
+	    	et.commit();
+			return true;
+	    }
+	    
+	    public void deleteEmployees() {
+	    	et.begin();
+	    	System.out.println("Employee Id to Delete the Employee details");
+	    	int id=sc.nextInt();
+	    	Employee1 e4 = em.find(Employee1.class, id);
+			em.remove(e4);
+			System.out.println("After deletion:" + e4.getE_id());
+			sc.close();
+			et.commit();
+	    }
+	    
+	    
+	    }

@@ -1,0 +1,23 @@
+
+public class NSeries {
+
+	public static void main(String[] args) {
+		int n;
+		int tenth=0;
+		int hundreds=0;
+		int thousand=0;
+		for(n=1;n<=5;n++)
+		{
+			tenth=10*n;
+			System.out.println(tenth);
+			hundreds=100*n;
+			System.out.println(hundreds);
+			thousand=1000*n;
+			System.out.println(thousand);
+			
+		}
+				
+
+	}
+
+}

@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
+
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar
+{
+    font-family: 'Oleo Script', cursive;
+    background-color:rgb(185, 183, 183);
+    width: auto;
+    height: 200vh;
+    
+}
+.sidebar nav {
+     padding: 10px;     
+
+}
+.sidebar nav li{
+    list-style: none;
+    font-size: 30px;
+    padding: 20px 0;
+    
+}
+.sidebar nav li a{
+    text-decoration: none;
+}
+.main{
+    /*background-color: burlywood;*/
+    width: 80vw;
+    height: 100vh;
+}
+.Container{
+    display: flex;
+}
+.InfoContainer{
+    background-color: rgb(166, 229, 245);
+    height: 70vh;
+    width: 72vw;
+    margin: 115px auto;
+    display: flex;
+    justify-content:space-evenly;
+}
+.DevPic img {
+    width: 300px;
+    
+    height: 70vh;
+}
+
+.DevInfo{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.name{
+    font-family: 'Oleo Script', cursive;
+    font-size: 34px;
+}
+.hello{
+    font-size: 25px;
+}
+.about{
+    font-size: 20Px;
+}
+.moreabout{
+    font-size: 15px;
+    margin-top: 10px;
+}
+.buttons{
+    margin-top: 30px;
+}
+.buttons button{
+    padding: revert;
+    border-radius: 20px;
+    color:black;
+    background-color: rgb(242, 245, 248);
+    font-weight: bold;
+    font-size: 15px;
+    margin: revert;
+    cursor:pointer;
+}
+.buttons button:hover{
+    background-color: darkblue;
+    color: black;
+}
+
+.contactform  {
+    font-family: 'Oleo Script', cursive;
+   padding-top: 120px;
+   padding-left: 50px;
+}
+.contactform  h1 {
+    text-align: center;
+
+
+}
+.contactfrom legend {
+    display: block;
+    padding-left: 2px;
+    padding-right: 2px;
+    border: none;
+  }
+.conatactfrom fieldset {
+    background-color: #eeeeee;
+  }
+  
+.mb-3 legend {
+    background-color: gray;
+    color: white;
+    padding: 5px 10px;
+  }
+.contactfrom input {
+    margin: 5px;
+  }

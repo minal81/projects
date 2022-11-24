@@ -1,0 +1,49 @@
+package com.Bank.DAOImpl;
+
+import java.util.Scanner;
+
+import javax.swing.JFrame;
+
+import com.Bank.DAO.AccountDAO;
+
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.EntityTransaction;
+import jakarta.persistence.Persistence;
+
+public class AccountDAOImpl implements AccountDAO {
+	
+	Scanner sc = new Scanner(System.in);
+	EntityManagerFactory emf = null;
+	EntityManager em = null;
+	EntityTransaction et = null;
+
+	// Import EntityManager factory to implement JPA and Hibernate
+	{
+		emf = Persistence.createEntityManagerFactory("ProjectUnit");
+
+		em = emf.createEntityManager();
+		et = em.getTransaction();
+	}
+
+	public Boolean CreateAccount() {
+		
+		return null;
+	}
+
+	public void Withdraw() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void Deposit() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public int CurrentBalance() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

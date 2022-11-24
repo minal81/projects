@@ -1,0 +1,21 @@
+package com.Banking.Bank.ServiceImpl;
+
+import com.Banking.Bank.entity.Account;
+import com.Banking.Bank.service.AccountService;
+
+public class AccountServiceImpl  implements AccountService
+{
+
+	@Override
+	public Account CreateAccount(Account account) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Account GetAccount(long AccountNo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

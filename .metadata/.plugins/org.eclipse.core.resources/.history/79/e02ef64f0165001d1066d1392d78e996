@@ -1,0 +1,5 @@
+package com.Banking.Bank.entity;
+
+public class Account {
+
+}

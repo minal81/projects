@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class PetersonEx 
+{
+
+	public static void main(String arg[])
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enteer the number");
+		int num=sc.nextInt();
+		int temp=num;
+		int f=1;
+		int sum=0;
+		int rem=0;
+		
+		while(num!=0)
+		{
+			rem=num%10;
+			for(int i=1;i<=rem;i++)
+            {
+                f=f*i;
+            }
+			sum =sum+f;
+			num=num/10;
+			
+			
+		}
+			System.out.println(sum);
+			
+			if(temp==sum)
+			{
+				System.out.println("number is peterson");
+				
+			}
+			else
+			{
+				System.out.println("number is not peterson");
+			}
+			
+	}
+}
+
+

@@ -1,0 +1,33 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner; 
+
+public class Doctor {
+
+	public static void main(String[] args) {
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/minal", "root", "Minal@2000");
+			Statement s=con.createStatement();
+			
+			
+			s.execute("create table Doctor(DoctorId int primary key auto_increment ,DoctorName varchar(20) not null , DoctorType varchar(20) , Charges varchar(20) not null , Education varchar(20), Shift varchar(20) ,HospitalName varchar(20),LicenseNumber int,PatientId int);");
+			System.out.println("table create....");
+			
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+
+	}
+
+}

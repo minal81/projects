@@ -1,0 +1,43 @@
+package com.Banking.Bank.entity;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+//import javax.validation.constraints.NotBlank;
+
+import lombok.Data;
+
+@Data
+@Entity
+@Table(name="Account")
+public class Account {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private long AccountNo;
+	
+	@Column(name="Accounttype",nullable=false)
+	private String AccountType;
+	
+	@Column(name="OwnerFirstName",length=20)
+	private String OwnerFName;
+	
+	@Column(name="OwnerLastName",length=20)
+	private String OwnerLName;
+	
+	@Column(name="BankName")
+	private String BankName;
+	
+	
+	@OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @JoinColumn(name = "TransactionId", referencedColumnName = "AccountNo")
+	
+	private Transaction transaction;
+
+}

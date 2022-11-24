@@ -1,0 +1,10 @@
+package com.Banking.Bank.service;
+
+public interface TransactionService {
+	//To Withdraw amount
+	void Withdraw(long Tid);
+	
+	//to deposit amount
+	Void Deposit(long Tid);
+
+}

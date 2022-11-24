@@ -1,0 +1,41 @@
+package javaFeacture;
+
+/*interface addition
+{
+	public void add(int a, int b);
+	//public int subtraction(int c,int d);
+	//public int multiplication(int e,int f);
+	//public int divided(int p,int q);
+}
+interface subtraction
+{
+	public int sub(int c,int d);
+}
+interface multiplication
+{
+	public int mul(int e,int f);
+}*/
+interface arithmatic
+{
+	public void operation(int a,int b);
+}
+public class LambdaEx {
+
+	public static void main(String[] args) {
+		/*addition a1= (a,b) -> {System.out.println("Addition: "+(a+b));};
+		a1.add(20,30);
+		
+		subtraction s1= (c,d) ->  {return(c-d);};
+		System.out.println("Subtraction: "+s1.sub(50,20));
+		
+		multiplication m1=(int e,int f)->{return(e*f);};
+		System.out.println("multiplication : "+m1.mul(5, 4));
+		*/
+		arithmatic add=(a,b) ->{ System.out.println("addition: "+(a+b));};
+		add.operation(12, 15);
+		
+		
+
+	}
+
+}
